@@ -1,0 +1,79 @@
+.hero{
+    display: flex;
+    flex-direction: column;
+    flex-flow: row wrap;
+    z-index: 0;
+    height: 100vh;
+}
+
+.hero .info{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    align-content: space-between;
+    flex-direction: column;
+    justify-content: space-between;
+
+    justify-content:center;
+
+    width: 40%;
+
+}
+.hero .img{
+    width: 60%;
+    display: flex;
+    row-gap: 20px;
+    justify-content:flex-end;
+    position: relative;
+
+}
+
+.hero .imgstyle{
+    width:70%;
+
+}
+
+
+.hero .subtitle{
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    /* identical to box height, or 200% */
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.5);
+}
+.hero .maintitle{
+    font-family: 'Barlow Condensed';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 72px;
+    line-height: 80px;
+    /* or 111% */
+
+
+    color: #FFFFFF;
+}
+
+.hero .description{
+    font-family: 'Barlow';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 32px;
+/* or 160% */
+
+
+color: #FFFFFF;
+}
+
+.hero .buttons{
+    display: flex;
+    align-content: flex-start;
+    gap: 20px;
+}

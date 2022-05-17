@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Barlow:wght@100;400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Barlow;
+  color: #fff;
+  overflow-x:hidden;
+}
+
+body {
+  margin: 0;
+  background-color: #000;
+  position: relative;
+}
+main{
+  padding: 0 15%;
+}
+
+.rec{
+  /* Rectangle */
+
+  position: absolute;
+  width: 1566px;
+  height: 1408px;
+  left: 295px;
+  top: -331px;
+  z-index: -1;
+  
+  background: radial-gradient(50% 50% at 50% 50%, rgba(84, 84, 84, 0.48) 10.42%, #000000 78.12%);
+}
+
+h1{
+  font-family: 'Barlow Condensed';
+font-style: normal;
+font-weight: 300;
+font-size: 72px;
+line-height: 80px;
+/* identical to box height, or 111% */
+
+
+color: #FFFFFF;
+}
+
+h2 {
+  font-family: 'Barlow Condensed';
+font-style: normal;
+font-weight: 300;
+font-size: 56px;
+line-height: 64px;
+/* identical to box height, or 114% */
+
+
+color: #FFFFFF;
+
+}
+
+h3 {
+font-family: 'Barlow Condensed';
+font-style: normal;
+font-weight: 300;
+font-size: 40px;
+line-height: 48px;
+/* identical to box height, or 120% */
+color: #FFFFFF;
+}
+
+h4{
+  font-family: 'Barlow Condensed';
+font-style: normal;
+font-weight: 300;
+font-size: 24px;
+line-height: 32px;
+/* identical to box height, or 133% */
+color: #FFFFFF;
+}
+
+h5{
+  font-family: 'Barlow';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 32px;
+/* identical to box height, or 200% */
+
+letter-spacing: 3px;
+text-transform: uppercase;
+
+color: rgba(255, 255, 255, 0.5);
+}
+
+p{
+  font-family: 'Barlow';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 20px;
+/* or 200% */
+
+
+color: rgba(255, 255, 255, 0.502972);
+}

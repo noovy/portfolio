@@ -1,0 +1,71 @@
+.skills{
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.skills .skillcom{
+    display: flex;
+    flex-direction: row;
+    align-content:center;
+    justify-content: center;
+    gap: 50px;
+
+}
+.skills .skillscom{
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+
+.skills .iconscont{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 15px;
+}
+.skills .icon{
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+    border: 1.6px solid rgba(255, 255, 255, 0.0782099);
+    box-shadow: 0px 10px 19px rgba(0, 1, 44, 0.157184);
+    border-radius: 16px;
+    width: 70px;
+    height: 70px;
+
+}
+.skills .skillcont{
+    display: flex;
+    flex-direction: column; 
+
+}
+
+.skills .icon img{
+    display: flex;
+    text-align: center;
+    height: 35px;
+}
+.label {
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 20px;
+    text-transform: uppercase;
+    text-align: center;
+  
+    color: #878787;
+  }
+
+
+.skillta{
+    display: flex;
+    align-content: flex-start;
+    gap:50px;
+}
