@@ -5,6 +5,7 @@ import React, { Fragment, useRef, useState } from "react";
 const isEmpty = (value) => value.trim() === "";
 
 const Contact = (props) => {
+  const [didSubmit, setDidSubmit] = useState(false);
   const [formInputsValidity, setFormInputValidity] = useState({
     name: true,
     email: true,
@@ -58,6 +59,8 @@ const Contact = (props) => {
         },
       }
     );
+    setDidSubmit(true);
+    console.log(setDidSubmit)
   };
 
   const nameControlClasses = `${classes.control} ${
@@ -70,30 +73,38 @@ const Contact = (props) => {
     formInputsValidity.message ? "" : classes.invalid
   }`;
 
+  const contactForm = (
+    <form onSubmit={confirmHandler}>
+      <div className={nameControlClasses}>
+        <label htmlFor="name">Name:</label>
+        <input type="text" id="name" ref={nameInputRef}></input>
+        {!formInputsValidity.name && <p>Please enter a valid name!</p>}
+      </div>
+      <div className={emailControlClasses}>
+        <label htmlFor="email">Email:</label>
+        <input type="text" id="email" ref={emailInputRef}></input>
+        {!formInputsValidity.email && <p>Please enter a valid name!</p>}
+      </div>
+      <div className={messageControlClasses}>
+        <label htmlFor="message">Message:</label>
+        <textarea id="message" ref={messageInputRef}></textarea>
+        {!formInputsValidity.message && <p>Please enter a valid name!</p>}
+      </div>
+      <Button type="submit">Submit</Button>
+    </form>
+  );
+
+  const didSubmitModalContent = <p>Succesfully sent the order!</p>
+  
+
+
   return (
     <Fragment>
       <div className={classes.contact}>
         <span className={classes.subtitle}>Get in Touch</span>
         <span className={classes.maintitle}>Contact me</span>
-
-        <form onSubmit={confirmHandler}>
-          <div className={nameControlClasses}>
-            <label htmlFor="name">Name:</label>
-            <input type="text" id="name" ref={nameInputRef}></input>
-            {!formInputsValidity.name && <p>Please enter a valid name!</p>}
-          </div>
-          <div className={emailControlClasses}>
-            <label htmlFor="email">Email:</label>
-            <input type="text" id="email" ref={emailInputRef}></input>
-            {!formInputsValidity.email && <p>Please enter a valid name!</p>}
-          </div>
-          <div className={messageControlClasses}>
-            <label htmlFor="message">Message:</label>
-            <textarea id="message" ref={messageInputRef}></textarea>
-            {!formInputsValidity.message && <p>Please enter a valid name!</p>}
-          </div>
-          <Button type="submit">Submit</Button>
-        </form>
+        {!didSubmit && contactForm}
+        {didSubmit && didSubmitModalContent}
       </div>
     </Fragment>
   );
