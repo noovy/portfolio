@@ -72,3 +72,18 @@ input, textarea{
 
     color: #FFFFFF;
 }
+
+.control {
+    margin-bottom: 0.5rem;
+  }
+  
+
+
+.invalid label {
+    color: #ca3e51;
+  }
+  
+  .invalid input,   .invalid textarea {
+    border-color: #aa0b20;
+    background-color: #fed0d5;
+  }
