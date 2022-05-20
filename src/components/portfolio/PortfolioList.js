@@ -48,6 +48,7 @@ const PortfolioList = () => {
   if (httpError) {
     return (<p className={classes.isloading}>{httpError}</p>);
   }
+  
 
   const portfolioList = portfolio.map((item) => (
     <PortfolioItem

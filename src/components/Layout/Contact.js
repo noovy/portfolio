@@ -32,12 +32,32 @@ const Contact = (props) => {
       message: enteredMessageIsValid,
     });
 
+    const msgData = {
+      name: enteredName,
+      email: enteredEmail,
+      message: enteredMessage,
+    };
+    console.log(msgData);
+
     const formIsValid =
       enteredNameIsValid && enteredEmailIsValid && enteredMessageIsValid;
 
     if (!formIsValid) {
       return;
     }
+
+    fetch(
+      "https://xpert-academy-1579184148150-default-rtdb.europe-west1.firebasedatabase.app/ts.json",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          msg: msgData,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
   };
 
   const nameControlClasses = `${classes.control} ${
@@ -57,20 +77,20 @@ const Contact = (props) => {
         <span className={classes.maintitle}>Contact me</span>
 
         <form onSubmit={confirmHandler}>
-            <div className={nameControlClasses}>
+          <div className={nameControlClasses}>
             <label htmlFor="name">Name:</label>
             <input type="text" id="name" ref={nameInputRef}></input>
             {!formInputsValidity.name && <p>Please enter a valid name!</p>}
-            </div>
-            <div className={emailControlClasses}>
-          <label htmlFor="email">Email:</label>
-          <input type="text" id="email" ref={emailInputRef}></input>
-          {!formInputsValidity.email && <p>Please enter a valid name!</p>}
+          </div>
+          <div className={emailControlClasses}>
+            <label htmlFor="email">Email:</label>
+            <input type="text" id="email" ref={emailInputRef}></input>
+            {!formInputsValidity.email && <p>Please enter a valid name!</p>}
           </div>
           <div className={messageControlClasses}>
-          <label htmlFor="message">Message:</label>
-          <textarea id="message" ref={messageInputRef}></textarea>
-          {!formInputsValidity.message && <p>Please enter a valid name!</p>}
+            <label htmlFor="message">Message:</label>
+            <textarea id="message" ref={messageInputRef}></textarea>
+            {!formInputsValidity.message && <p>Please enter a valid name!</p>}
           </div>
           <Button type="submit">Submit</Button>
         </form>
